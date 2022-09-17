@@ -16,15 +16,19 @@ public class PlayerMovement : MonoBehaviour
 
     bool crouch = false;
 
+    private Animator anim;
+
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        anim.SetFloat("WalkDir", horizontalMove);
 
         if (Input.GetButtonDown("Jump"))
         {
