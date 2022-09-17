@@ -215,8 +215,8 @@ public class AIPathing : MonoBehaviour
         Debug.Log("investirage called");
         invObj = obj;
         state = State.investigate;
-
-        if (attrac)
+        attracted = attrac;
+        if (attracted)
         {
             if (mustTurn && !turnCD)
             {
