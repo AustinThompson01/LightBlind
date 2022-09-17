@@ -22,7 +22,7 @@ public class SoundObj : MonoBehaviour
     {
         if(collision.tag == "Monster")
         {
-            collision.GetComponent<AIPathing>().investigate(this.gameObject);
+            collision.GetComponent<AIPathing>().investigate(this.gameObject, to.attracts);
             gameObject.SetActive(false);
         }
     }

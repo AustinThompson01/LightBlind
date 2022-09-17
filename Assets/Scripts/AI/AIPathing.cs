@@ -29,6 +29,7 @@ public class AIPathing : MonoBehaviour
     private bool mustTurn = false;
     private bool turnCD = false;
     private bool outsideRange = true;
+    private bool attracted = false;
 
     private Vector2 followVector;
 
@@ -75,7 +76,7 @@ public class AIPathing : MonoBehaviour
 
             //Makes the creature investigate object, in progress
             case State.investigate:
-                investigate(invObj);
+                investigate(invObj, attracted);
                 break;
 
             //Move in direction fast, working
@@ -93,7 +94,7 @@ public class AIPathing : MonoBehaviour
             if (transform.localScale.x > 0)
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, seeDist, layerMask);
-                //Debug.Log(hit.transform.gameObject);
+                Debug.Log(hit.transform.gameObject);
                 if(hit.transform.gameObject.tag == "Player" && outsideRange)
                 {
                     state = State.chase;
@@ -209,30 +210,38 @@ public class AIPathing : MonoBehaviour
     /// <summary>
     /// Goes to investigate object
     /// </summary>
-    public void investigate(GameObject obj)
+    public void investigate(GameObject obj, bool attrac)
     {
         Debug.Log("investirage called");
         invObj = obj;
         state = State.investigate;
 
-        if (mustTurn && !turnCD)
+        if (attrac)
         {
-            Debug.Log("Chase turn");
-            turnCD = true;
-            turn();
+            if (mustTurn && !turnCD)
+            {
+                Debug.Log("Chase turn");
+                turnCD = true;
+                turn();
+            }
+            else
+            {
+                //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.fixedDeltaTime);
+                followVector = Vector2.MoveTowards(this.transform.position, invObj.transform.position, 0.06f);
+                rb2d.MovePosition(followVector);
+            }
+
+            if (Vector2.Distance(this.transform.position, invObj.transform.position) < invDist)
+            {
+                Debug.Log(Vector2.Distance(this.transform.position, invObj.transform.position));
+                Debug.Log("going to idle");
+                state = State.idle;
+            }
         }
         else
         {
-            //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.fixedDeltaTime);
-            followVector = Vector2.MoveTowards(this.transform.position, invObj.transform.position, 0.06f);
-            rb2d.MovePosition(followVector);
-        }
-
-        if(Vector2.Distance(this.transform.position, invObj.transform.position) < invDist)
-        {
-            Debug.Log(Vector2.Distance(this.transform.position, invObj.transform.position));
-            Debug.Log("going to idle");
-            state = State.idle;
+            turn();
+            run();
         }
     }
 
