@@ -22,6 +22,8 @@ public class AIPathing : MonoBehaviour
     public float runTime = 1f;
     public float seeDist = 50f;
 
+    public float invDist = 3f;
+
     public BoxCollider2D sightBox;
 
     private bool mustTurn = false;
@@ -66,7 +68,7 @@ public class AIPathing : MonoBehaviour
                 idle(idleTime);
                 break;
 
-            //Makes the creature chase the player, in progress
+            //Makes the creature chase the player, working
             case State.chase:
                 chase();
                 break;
@@ -170,24 +172,6 @@ public class AIPathing : MonoBehaviour
             //turnCD = false;
             //Debug.Log("Wait over");
         }
-        else
-        {
-            /*
-            Debug.Log("Chase wait");
-            Debug.Log(mustTurn);
-            if (mustTurn)
-            {
-                state = State.patrolling;
-            }
-            else
-            {
-                state = State.chase;
-            }
-            */
-            //yield return new WaitForSeconds(f);
-           // turnCD = false;
-            //Debug.Log("Wait over");
-        }
     }
 
     public void chase()
@@ -222,11 +206,34 @@ public class AIPathing : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Goes to investigate object
+    /// </summary>
     public void investigate(GameObject obj)
     {
+        Debug.Log("investirage called");
         invObj = obj;
         state = State.investigate;
 
+        if (mustTurn && !turnCD)
+        {
+            Debug.Log("Chase turn");
+            turnCD = true;
+            turn();
+        }
+        else
+        {
+            //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.fixedDeltaTime);
+            followVector = Vector2.MoveTowards(this.transform.position, invObj.transform.position, 0.06f);
+            rb2d.MovePosition(followVector);
+        }
+
+        if(Vector2.Distance(this.transform.position, invObj.transform.position) < invDist)
+        {
+            Debug.Log(Vector2.Distance(this.transform.position, invObj.transform.position));
+            Debug.Log("going to idle");
+            state = State.idle;
+        }
     }
 
     /// <summary>

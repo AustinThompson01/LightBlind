@@ -6,6 +6,7 @@ TagManager:
   tags:
   - 'Grabable '
   - grabbable
+  - Monster
   layers:
   - Default
   - TransparentFX

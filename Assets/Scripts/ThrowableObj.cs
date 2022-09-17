@@ -7,6 +7,7 @@ public class ThrowableObj : ScriptableObject
 {
     public float soundArea;
     public Sprite objectPic;
+    public AudioClip audio;
     public bool attracts;
     public float stunDuration;
 }
