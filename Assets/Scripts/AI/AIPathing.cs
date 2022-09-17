@@ -28,6 +28,8 @@ public class AIPathing : MonoBehaviour
     private bool turnCD = false;
     private bool outsideRange = true;
 
+    private Vector2 followVector;
+
     int layerMask = ~(1 << 9);
     public State state;
 
@@ -81,7 +83,7 @@ public class AIPathing : MonoBehaviour
 
         }
 
-        Debug.Log(outsideRange);
+        //Debug.Log(outsideRange);
         if(outsideRange && state != State.chase)
         {
             //Debug.Log("Far enough away ");
@@ -110,6 +112,10 @@ public class AIPathing : MonoBehaviour
     private void FixedUpdate()
     {
         mustTurn = Physics2D.OverlapCircle(transform.position, 0.1f, wallLayer);
+        if(turnCD)
+        {
+            turnCD = mustTurn;
+        }
     }
 
     /// <summary>
@@ -160,8 +166,9 @@ public class AIPathing : MonoBehaviour
         {
             state = State.patrolling;
             //Should prevent infinite turning
-            yield return new WaitForSeconds(f * 3);
-            turnCD = false;
+            //yield return new WaitForSeconds(f);
+            //turnCD = false;
+            //Debug.Log("Wait over");
         }
         else
         {
@@ -177,9 +184,9 @@ public class AIPathing : MonoBehaviour
                 state = State.chase;
             }
             */
-            yield return new WaitForSeconds(f * 3);
-            turnCD = false;
-            Debug.Log("Wait over");
+            //yield return new WaitForSeconds(f);
+           // turnCD = false;
+            //Debug.Log("Wait over");
         }
     }
 
@@ -193,7 +200,9 @@ public class AIPathing : MonoBehaviour
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.fixedDeltaTime);
+            //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.fixedDeltaTime);
+            followVector = Vector2.MoveTowards(transform.position, target.transform.position, 0.06f);
+            rb2d.MovePosition(followVector);
         }
     }
 
