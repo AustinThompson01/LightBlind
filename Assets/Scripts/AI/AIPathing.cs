@@ -95,7 +95,7 @@ public class AIPathing : MonoBehaviour
             if (transform.localScale.x > 0)
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, seeDist, layerMask);
-                //Debug.Log(hit.transform.gameObject);
+                Debug.Log(hit.transform.gameObject);
                 if(hit.transform.gameObject.tag == "Player" && outsideRange)
                 {
                     state = State.chase;
@@ -104,7 +104,7 @@ public class AIPathing : MonoBehaviour
             else
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right, seeDist, layerMask);
-                //Debug.Log(hit.transform.gameObject);
+                Debug.Log(hit.transform.gameObject);
                 if (hit.transform.gameObject.tag == "Player" && outsideRange)
                 {
                     state = State.chase;
