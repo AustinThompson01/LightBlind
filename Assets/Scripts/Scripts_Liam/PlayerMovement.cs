@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
-            anim.SetBool("Jump", true);
+
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
-        
+        anim.SetBool("Jump", !GetComponent<CharacterController2D>().m_Grounded);
     }
 
     private void FixedUpdate()
