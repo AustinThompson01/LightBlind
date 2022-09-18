@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   to: {fileID: 11400000, guid: 4d0e0cb8f6ca72b4a978e1041e8fd473, type: 2}
+  triggerCol: {fileID: 0}
+  physCol: {fileID: 0}
 --- !u!61 &85303298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -563,8 +565,8 @@ MonoBehaviour:
   - {fileID: 895815584}
   - {fileID: 923470041}
   m_Bounds:
-    m_Center: {x: -0.04140055, y: -0.0062785745, z: 0}
-    m_Extent: {x: 0.5264102, y: 0.5298134, z: 0}
+    m_Center: {x: -0.13972092, y: -0.08581817, z: 0}
+    m_Extent: {x: 0.655599, y: 0.44192398, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -729,7 +731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516462233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 0.36, z: 0}
+  m_LocalPosition: {x: -20, y: 0.998, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
