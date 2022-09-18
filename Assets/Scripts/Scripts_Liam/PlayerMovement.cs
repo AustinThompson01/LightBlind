@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        anim.SetBool("Jump", !GetComponent<CharacterController2D>().m_Grounded);
         anim.SetFloat("WalkDir", horizontalMove);
 
         if (Input.GetButtonDown("Jump"))
@@ -43,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
-        anim.SetBool("Jump", !GetComponent<CharacterController2D>().m_Grounded);
     }
 
     private void FixedUpdate()
