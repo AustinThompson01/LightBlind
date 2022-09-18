@@ -1,0 +1,32 @@
+Quick_potential_menu_theme:
+Potential song for the main menu. Up to your discretion if used or not.
+
+String_glissandi_render:
+Potential sound to play whenever the monster enters a running state. Gets quiet until silent after running state is disabled.
+
+Possible_sound_for_use_on_menus_or_after_obtaining_items:
+As the name suggests. Whenever a button is clicked or you pick up a bottle or something this can play.
+
+415873__inspectorj__buzzing-electric-lamp-a:
+Plays around lamps.
+
+344265__inspectorj__glass-smash-bottle-d:
+Plays whenever a bottle impacts.
+
+388096__kalou__throwing-rock:
+Plays whenever a rock impacts.
+
+167685__cris__footsteps-in-a-concrete-corridor-1:
+Footstep sounds 1.
+
+459449__coral-island-studios__01-footsteps-sand:
+Footstep sounds 2.
+
+548215__sweet-niche__processed-canned-air:
+Ambience 1.
+
+267449__kangaroovindaloo__spooky-wind-1:
+Ambience 2.
+
+276857__darius-kedros__rat-in-the-attic-possum-in-the-roof:
+Monster step sounds.
