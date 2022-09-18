@@ -30,6 +30,7 @@ public class AIPathing : MonoBehaviour
     private bool turnCD = false;
     private bool outsideRange = true;
     private bool attracted = false;
+    private bool flipped = false;
 
     private Vector2 followVector;
 
@@ -94,7 +95,7 @@ public class AIPathing : MonoBehaviour
             if (transform.localScale.x > 0)
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, seeDist, layerMask);
-                Debug.Log(hit.transform.gameObject);
+                //Debug.Log(hit.transform.gameObject);
                 if(hit.transform.gameObject.tag == "Player" && outsideRange)
                 {
                     state = State.chase;
@@ -146,6 +147,7 @@ public class AIPathing : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
         runSpeed *= -1;
+        flipped = !flipped;
         //chaseSpeed *= -1;
     }
 
@@ -240,8 +242,28 @@ public class AIPathing : MonoBehaviour
         }
         else
         {
-            turn();
-            run();
+            Debug.Log(obj.transform.position.x + " :: " + transform.position.x + "Flipped: " + flipped);
+            if(obj.transform.position.x < transform.position.x && flipped)
+            {
+                turn();
+                run();
+            }
+            else if(obj.transform.position.x < transform.position.x && !flipped)
+            {
+                //turn();
+                run();
+            }
+            else if (obj.transform.position.x > transform.position.x && flipped)
+            {
+                //turn();
+                run();
+            }
+            else
+            {
+                turn();
+                run();
+            }
+            
         }
     }
 
@@ -274,5 +296,10 @@ public class AIPathing : MonoBehaviour
         {
             state = State.idle;
         }
+    }
+
+    public void jumping(float x)
+    {
+        rb2d.AddForce(new Vector2(0f, x));
     }
 }
