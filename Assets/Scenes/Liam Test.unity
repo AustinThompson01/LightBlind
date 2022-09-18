@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e58bbbc9972194d903e7562f5ee802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 4
+  Speed: 0
   LaunchOffset: {x: 0, y: 0, z: 0}
   Thrown: 0
 --- !u!1 &1364276347

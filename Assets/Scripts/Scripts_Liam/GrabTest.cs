@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GrabTest : MonoBehaviour
 {
+	public Throw thrown;
 	public bool grabbed;
 	RaycastHit2D hit;
 	public float distance = 2f;
 	public Transform holdpoint;
 	public float throwforce;
 	public LayerMask notgrabbed;
-
-
+	
 
 	public GameObject grabbable;
 
@@ -29,7 +29,10 @@ public class GrabTest : MonoBehaviour
         {
 			toss();
         }
-
+		if (Input.GetKeyDown(KeyCode.N))
+		{
+			pit();
+		}
 		if (Input.GetKeyDown(KeyCode.B))
 		{
 			Physics2D.queriesStartInColliders = false;
@@ -142,13 +145,25 @@ public class GrabTest : MonoBehaviour
 		grabbed = false;
 	}
 	*/
-
-	public void toss()
+	public void pit()
 	{
+		if (!(grabbed = false))
+		{
+			return;
+		}
+		grabbable.GetComponent<Throw>().enabled = true;
+	}
+	public void toss()
+    {
+		/*
 		if (grabbed)
-        {
-
-        }
-    }
-
+		{
+			grabbable.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x, 1) * throwforce;
+			grabbable.GetComponent<Throw>().enabled = true;
+		}
+		*/
+		grabbable.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x, 1) * throwforce;
+		grabbable.GetComponent<Throw>().enabled = true;
+	}
+	
 }

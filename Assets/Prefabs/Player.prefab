@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18646fd8537535948b129b35196eeb98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrown: {fileID: 0}
   grabbed: 0
   distance: 0.5
   holdpoint: {fileID: 1549884982}
