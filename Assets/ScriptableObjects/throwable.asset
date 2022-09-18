@@ -15,5 +15,5 @@ MonoBehaviour:
   soundArea: 10
   objectPic: {fileID: 0}
   audio: {fileID: 0}
-  attracts: 1
+  attracts: 0
   stunDuration: 0
