@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c675049a6be4544da9d1ed6967cb35f, type: 3}
-  m_Name: throwable
+  m_Name: Rocl
   m_EditorClassIdentifier: 
   soundArea: 10
-  audio: {fileID: 8300000, guid: 7e637ed122b2e234f974e935db645dcd, type: 3}
-  attracts: 0
+  audio: {fileID: 8300000, guid: 3c5b4157356fc0743962b8918ae7e219, type: 3}
+  attracts: 1

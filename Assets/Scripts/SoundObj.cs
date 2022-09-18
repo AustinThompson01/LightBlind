@@ -14,12 +14,16 @@ public class SoundObj : MonoBehaviour
     private bool th = false;
     private bool gr = false;
 
+    private AudioSource Aud;
+
     // Start is called before the first frame update
     void Start()
     {
         triggerCol.enabled = false;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        Aud = GetComponent<AudioSource>();
+        Aud.clip = to.audio;
 
     }
 
@@ -42,17 +46,26 @@ public class SoundObj : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        triggerCol.enabled = true;
-        anim.SetTrigger("Ground");
-        gr = true;
-        if(gr && th)
-           if (to.attracts)
+        
+        if (th)
         {
-            Destroy(this.gameObject, 2f);
+            triggerCol.enabled = true;
+            anim.SetTrigger("Ground");
+            gr = true;
         }
-        else
+
+        if (gr)
         {
-            Destroy(this.gameObject, 1f);
+            Debug.Log("Play audio");
+            Aud.Play();
+            if(to.attracts)
+            {
+                Destroy(this.gameObject, 2f);
+            }
+            else
+            {
+                Destroy(this.gameObject, 1f);
+            }
         }
     }
 
