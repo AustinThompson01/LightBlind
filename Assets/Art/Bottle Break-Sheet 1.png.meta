@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e288f41afee28ff4e9473a0923774d43
+guid: 5c8f94a21528f7b4a820f21d921e71bc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bottle Break-Sheet_0
+      name: Bottle Break-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1d66a4f68db4ec4e9bcc7de3bbd5a72
-      internalID: 287335916
+      spriteID: 9036ae26a2856ca4cb6157d404a86e56
+      internalID: -828180125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle Break-Sheet_1
+      name: Bottle Break-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 965c813cc6ae93843b3c69ec05662698
-      internalID: -1629736178
+      spriteID: 3b1766b34718ee843920ec2c22ba5574
+      internalID: -1162846810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle Break-Sheet_2
+      name: Bottle Break-Sheet 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86b01972b74450a44a4d0973229dcfe8
-      internalID: -1682372171
+      spriteID: 6134113dc0da3364da973bf20cd435c0
+      internalID: -2089369125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle Break-Sheet_3
+      name: Bottle Break-Sheet 1_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30ef483d36059b14db7b9c267b9d6ec5
-      internalID: 778589826
+      spriteID: 9e6db34ad7b5bd440a959f054dab7431
+      internalID: -1508155044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle Break-Sheet_4
+      name: Bottle Break-Sheet 1_4
       rect:
         serializedVersion: 2
         x: 128
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b9aeee9e27135e4aa764b9cee03df2b
-      internalID: 176655457
+      spriteID: bf34bfd366b1212479be5cbdc3e3b5af
+      internalID: 1794897494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle Break-Sheet_5
+      name: Bottle Break-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 160
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 398225ff72681074088c15e65808a19a
-      internalID: -1824800939
+      spriteID: bff18118e7956ea41a838e9089d207a5
+      internalID: 659763684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle Break-Sheet_6
+      name: Bottle Break-Sheet 1_6
       rect:
         serializedVersion: 2
         x: 192
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55f9a8ac703c97a4bb50d069d3b3cf8c
-      internalID: 638048924
+      spriteID: bbdfd1b4e1b8fd64c92029971aeee99b
+      internalID: -1334157156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle Break-Sheet_7
+      name: Bottle Break-Sheet 1_7
       rect:
         serializedVersion: 2
         x: 224
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 268da13423c5d164b93c6457b4c2ada7
-      internalID: -1801271332
+      spriteID: 5ad3c2b0f140bb245a9e4cb581505a90
+      internalID: 1115182847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle Break-Sheet_8
+      name: Bottle Break-Sheet 1_8
       rect:
         serializedVersion: 2
         x: 256
@@ -287,29 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d73f7421c0b25b749b38177c8d9d0d61
-      internalID: 838055952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bottle Break-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: faff01c72404ec54db2f46ea07cfc2fa
-      internalID: -2125484512
+      spriteID: 3e6b6bb874a69b548b7e491f812bd2ce
+      internalID: -1023110528
       vertices: []
       indices: 
       edges: []
@@ -325,16 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bottle Break-Sheet_4: 176655457
-      Bottle Break-Sheet_2: -1682372171
-      Bottle Break-Sheet_8: 838055952
-      Bottle Break-Sheet_1: -1629736178
-      Bottle Break-Sheet_0: 287335916
-      Bottle Break-Sheet_7: -1801271332
-      Bottle Break-Sheet_3: 778589826
-      Bottle Break-Sheet_5: -1824800939
-      Bottle Break-Sheet_9: -2125484512
-      Bottle Break-Sheet_6: 638048924
+      Bottle Break-Sheet 1_3: -1508155044
+      Bottle Break-Sheet 1_5: 659763684
+      Bottle Break-Sheet 1_1: -1162846810
+      Bottle Break-Sheet 1_0: -828180125
+      Bottle Break-Sheet 1_8: -1023110528
+      Bottle Break-Sheet 1_6: -1334157156
+      Bottle Break-Sheet 1_7: 1115182847
+      Bottle Break-Sheet 1_2: -2089369125
+      Bottle Break-Sheet 1_4: 1794897494
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
