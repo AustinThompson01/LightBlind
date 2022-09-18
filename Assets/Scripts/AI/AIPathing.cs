@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AIPathing : MonoBehaviour
 {
@@ -319,6 +320,15 @@ public class AIPathing : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("Running", false);
         GetComponent<Animator>().SetBool("Jump", true);
+        StartCoroutine(endTimer());
         Destroy(target, 0.5f);
+        
+    }
+
+    public IEnumerator endTimer()
+    {
+        Debug.Log("End");
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("AnfereneeTest");
     }
 }

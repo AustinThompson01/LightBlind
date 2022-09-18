@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: throwable
   m_EditorClassIdentifier: 
   soundArea: 10
-  audio: {fileID: 8300000, guid: 7e637ed122b2e234f974e935db645dcd, type: 3}
+  audio: {fileID: 8300000, guid: 7bcbc8d46e7845a4c86d86715619a657, type: 3}
   attracts: 0
