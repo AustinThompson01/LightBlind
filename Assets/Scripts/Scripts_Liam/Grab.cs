@@ -33,7 +33,7 @@ public class grabberscript : MonoBehaviour
 			{
 				Physics2D.queriesStartInColliders = false;
 
-				hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance);
+				hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, 11);
 
 				if (hit.collider != null && hit.collider.tag == "grabbable")
 				{
@@ -62,8 +62,11 @@ public class grabberscript : MonoBehaviour
 		}
 
 		if (grabbed)
-			hit.collider.gameObject.transform.position = holdpoint.position;
+		{
+			Debug.Log(hit.collider.gameObject.name);
 
+			hit.collider.gameObject.transform.position = holdpoint.position;
+		}
 
 	}
 
@@ -76,16 +79,16 @@ public class grabberscript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-		if(!grabbed)
+		/*if(!grabbed)
         {
 			other.gameObject.transform.position = holdpoint.position;
 			grabbed = true;
 		}
-		
+		*/
 	}
 
-	private void OnTriggerExit2D(Collider2D other)
+	/*private void OnTriggerExit2D(Collider2D other)
 	{
 		grabbed = false;
-	}
+	}*/
 }
