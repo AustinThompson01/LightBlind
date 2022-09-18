@@ -65,12 +65,14 @@ public class AIPathing : MonoBehaviour
             //patrolls an area until it hits wall, working
             case State.patrolling:
                 attackBox.enabled = false;
+                GetComponent<Animator>().SetBool("Running", false);
                 patrol();
                 break;
 
             //Makes the creature stand still, working
             case State.idle:
                 attackBox.enabled = false;
+                GetComponent<Animator>().SetBool("Running", false);
                 idle(idleTime);
                 break;
 
@@ -196,6 +198,7 @@ public class AIPathing : MonoBehaviour
         {
             //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.fixedDeltaTime);
             attackBox.enabled = true;
+            GetComponent<Animator>().SetBool("Running", true);
             followVector = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed);
             rb2d.MovePosition(followVector);
         }
@@ -280,6 +283,7 @@ public class AIPathing : MonoBehaviour
     /// </summary>
     public void run()
     {
+        GetComponent<Animator>().SetBool("Running", true);
         state = State.run;
         StartCoroutine(runTiming());
         if (mustTurn && !turnCD)
@@ -313,7 +317,8 @@ public class AIPathing : MonoBehaviour
 
     public void attack()
     {
-        GetComponent<Animator>().Play("Jumping");
+        GetComponent<Animator>().SetBool("Running", false);
+        GetComponent<Animator>().SetBool("Jump", true);
         Destroy(target, 0.5f);
     }
 }
