@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AnferneeTest.unity
     guid: 99e91486c427bc440a6a1f996340dfdc
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: f03ed4ef348ae764bbe7ff3eaafc01a3
   m_configObjects: {}

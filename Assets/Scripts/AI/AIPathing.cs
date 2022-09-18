@@ -329,6 +329,6 @@ public class AIPathing : MonoBehaviour
     {
         Debug.Log("End");
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("AnfereneeTest");
+        SceneManager.LoadScene("AnferneeTest");
     }
 }

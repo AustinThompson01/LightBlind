@@ -10,7 +10,7 @@ public class ResetLevel : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            SceneManager.LoadScene("AnfereneeTest");
+            SceneManager.LoadScene("AnferneeTest");
         }
     }
 }
