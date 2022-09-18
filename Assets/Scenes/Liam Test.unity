@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 1053022085}
   - component: {fileID: 1053022084}
   - component: {fileID: 1053022083}
+  - component: {fileID: 1053022087}
   m_Layer: 11
   m_Name: Object
   m_TagString: grabbable
@@ -249,13 +250,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053022082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1311, y: 0.93, z: 0}
+  m_LocalPosition: {x: -4.63, y: 4.35, z: 0}
   m_LocalScale: {x: 0.69773376, y: 0.7397519, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1053022087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053022082}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e58bbbc9972194d903e7562f5ee802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
+  LaunchOffset: {x: 0, y: 0, z: 0}
+  Thrown: 0
 --- !u!1 &1364276347
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,10 +580,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1635626556, guid: e71d9e48ec2254e4fba756e92ec88af7, type: 3}
-      propertyPath: grabbable
-      value: 
-      objectReference: {fileID: 1053022082}
     - target: {fileID: 3093329890555874856, guid: e71d9e48ec2254e4fba756e92ec88af7, type: 3}
       propertyPath: m_Name
       value: Player

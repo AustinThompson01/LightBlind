@@ -39,12 +39,12 @@ public class GrabTest : MonoBehaviour
 			if (hit.collider != null && hit.collider.tag == "grabbable" && !grabbed)
 			{
 				grabbed = true;
-
+				grabbable = hit.collider.gameObject;
 			}
 
 
 			//grab
-
+			/*
 			else if (!Physics2D.OverlapPoint(holdpoint.position, notgrabbed))
 			{
 				grabbed = false;
@@ -59,12 +59,12 @@ public class GrabTest : MonoBehaviour
 				//throw
 			}
 
-
+			*/
 		}
 
 		if (grabbed)
 		{
-			hit.collider.gameObject.transform.position = holdpoint.position;
+			grabbable.transform.position = holdpoint.position;
 		}
 
 
@@ -79,15 +79,17 @@ public class GrabTest : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-
+		/*
 		if (Input.GetKeyDown(KeyCode.B))
 		{
 
 			if (!grabbed)
 			{
+				Debug.Log("In pickup");
 				if (other.tag == "grabbable")
 				{
 					grabbed = true;
+					grabbable = hit.collider.gameObject;
 					hit.collider.gameObject.transform.position = holdpoint.position;
 
 				}
@@ -96,7 +98,9 @@ public class GrabTest : MonoBehaviour
 			}
 			else if (!Physics2D.OverlapPoint(holdpoint.position, notgrabbed))
 			{
+				Debug.Log("In overlap thingy");
 				grabbed = false;
+				hit.collider.gameObject.GetComponent<Throw>().enabled = true;
 
 				if (hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
 				{
@@ -108,22 +112,36 @@ public class GrabTest : MonoBehaviour
 				//throw
 			}
 
+			else if (grabbed)
+            {
+				Debug.Log("In throw");
+				grabbed = false;
+				grabbable.GetComponent<Throw>().enabled = true;
 
+				if (grabbable.GetComponent<Rigidbody2D>() != null)
+				{
+
+					grabbable.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x, 1) * throwforce;
+				}
+
+			}
 		}
 
-
+		*/
 		/*if (!grabbed)
 		{
 			other.gameObject.transform.position = holdpoint.position;
 			grabbed = true;
 		}*/
-
+		
 	}
 
+	/*
 	private void OnTriggerExit2D(Collider2D other)
 	{
 		grabbed = false;
 	}
+	*/
 
 	public void toss()
 	{
