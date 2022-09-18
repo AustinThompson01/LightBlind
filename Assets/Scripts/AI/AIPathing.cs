@@ -25,6 +25,7 @@ public class AIPathing : MonoBehaviour
     public float invDist = 3f;
 
     public BoxCollider2D sightBox;
+    public BoxCollider2D attackBox;
 
     private bool mustTurn = false;
     private bool turnCD = false;
@@ -52,6 +53,7 @@ public class AIPathing : MonoBehaviour
         b2d = GetComponent<BoxCollider2D>();
         target = GameObject.FindGameObjectWithTag("Player");
         rb2d = GetComponent<Rigidbody2D>();
+        attackBox.enabled = false;
     }
 
     // Update is called once per frame
@@ -62,26 +64,31 @@ public class AIPathing : MonoBehaviour
         {
             //patrolls an area until it hits wall, working
             case State.patrolling:
+                attackBox.enabled = false;
                 patrol();
                 break;
 
             //Makes the creature stand still, working
             case State.idle:
+                attackBox.enabled = false;
                 idle(idleTime);
                 break;
 
             //Makes the creature chase the player, working
             case State.chase:
+                //attackBox.enabled = true;
                 chase();
                 break;
 
             //Makes the creature investigate object, in progress
             case State.investigate:
+                attackBox.enabled = false;
                 investigate(invObj, attracted);
                 break;
 
             //Move in direction fast, working
             case State.run:
+                attackBox.enabled = false;
                 run();
                 break;
 
@@ -188,6 +195,7 @@ public class AIPathing : MonoBehaviour
         else
         {
             //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.fixedDeltaTime);
+            attackBox.enabled = true;
             followVector = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed);
             rb2d.MovePosition(followVector);
         }
@@ -301,5 +309,11 @@ public class AIPathing : MonoBehaviour
     public void jumping(float x)
     {
         rb2d.AddForce(new Vector2(0f, x));
+    }
+
+    public void attack()
+    {
+        GetComponent<Animator>().Play("Jumping");
+        Destroy(target, 0.5f);
     }
 }
