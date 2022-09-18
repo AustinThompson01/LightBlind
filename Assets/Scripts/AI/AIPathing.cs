@@ -186,7 +186,7 @@ public class AIPathing : MonoBehaviour
         else
         {
             //transform.position = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.fixedDeltaTime);
-            followVector = Vector2.MoveTowards(transform.position, target.transform.position, 0.06f);
+            followVector = Vector2.MoveTowards(transform.position, target.transform.position, chaseSpeed);
             rb2d.MovePosition(followVector);
         }
     }
