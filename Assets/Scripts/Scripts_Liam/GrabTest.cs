@@ -1,9 +1,9 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class grabberscript : MonoBehaviour
+public class GrabTest : MonoBehaviour
 {
-
 	public bool grabbed;
 	RaycastHit2D hit;
 	public float distance = 2f;
@@ -74,14 +74,48 @@ public class grabberscript : MonoBehaviour
 		Gizmos.DrawLine(transform.position, transform.position + Vector3.right * transform.localScale.x * distance);
 	}
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-		if(!grabbed)
-        {
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+
+		if (Input.GetKeyDown(KeyCode.B))
+		{
+
+			if (!grabbed)
+			{
+
+
+				if (other.tag == "grabbable")
+				{
+					grabbed = true;
+				}
+
+				//grab
+			}
+			else if (!Physics2D.OverlapPoint(holdpoint.position, notgrabbed))
+			{
+				grabbed = false;
+
+				if (hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
+				{
+
+					hit.collider.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x, 1) * throwforce;
+				}
+
+
+				//throw
+			}
+
+
+		}
+
+		if (grabbed)
+			hit.collider.gameObject.transform.position = holdpoint.position;
+		if (!grabbed)
+		{
 			other.gameObject.transform.position = holdpoint.position;
 			grabbed = true;
 		}
-		
+
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
