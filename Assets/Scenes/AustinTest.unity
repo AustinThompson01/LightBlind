@@ -1882,6 +1882,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1635626556, guid: e71d9e48ec2254e4fba756e92ec88af7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635626556, guid: e71d9e48ec2254e4fba756e92ec88af7, type: 3}
+      propertyPath: notgrabbed.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3093329890555874856, guid: e71d9e48ec2254e4fba756e92ec88af7, type: 3}
       propertyPath: m_Name
       value: Player
