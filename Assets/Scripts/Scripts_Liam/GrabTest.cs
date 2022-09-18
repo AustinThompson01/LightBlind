@@ -147,11 +147,10 @@ public class GrabTest : MonoBehaviour
 	*/
 	public void pit()
 	{
-		if (!(grabbed = false))
-		{
-			return;
-		}
+		grabbed = false;
 		grabbable.GetComponent<Throw>().enabled = true;
+		grabbable = null;
+
 	}
 	public void toss()
     {
@@ -162,8 +161,11 @@ public class GrabTest : MonoBehaviour
 			grabbable.GetComponent<Throw>().enabled = true;
 		}
 		*/
+		grabbed = false;
+		grabbable.GetComponent<SoundObj>().thrown();
 		grabbable.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x, 1) * throwforce;
 		grabbable.GetComponent<Throw>().enabled = true;
+		grabbable = null;
 	}
 	
 }

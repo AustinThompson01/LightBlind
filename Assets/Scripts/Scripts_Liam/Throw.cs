@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Throw : MonoBehaviour
 {
-    public float Speed = 4;
+    public float Speed = 0;
     public Vector3 LaunchOffset;
     public bool Thrown;
     // Start is called before the first frame update

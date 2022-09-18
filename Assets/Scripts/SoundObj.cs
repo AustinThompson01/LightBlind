@@ -11,13 +11,16 @@ public class SoundObj : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
 
+    private bool th = false;
+    private bool gr = false;
+
     // Start is called before the first frame update
     void Start()
     {
         triggerCol.enabled = false;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        anim.SetTrigger("Threw");
+
     }
 
     // Update is called once per frame
@@ -41,7 +44,9 @@ public class SoundObj : MonoBehaviour
     {
         triggerCol.enabled = true;
         anim.SetTrigger("Ground");
-        if (to.attracts)
+        gr = true;
+        if(gr && th)
+           if (to.attracts)
         {
             Destroy(this.gameObject, 2f);
         }
@@ -49,5 +54,11 @@ public class SoundObj : MonoBehaviour
         {
             Destroy(this.gameObject, 1f);
         }
+    }
+
+    public void thrown()
+    {
+        anim.SetTrigger("Threw");
+        th = true;
     }
 }
